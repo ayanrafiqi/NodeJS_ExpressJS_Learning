@@ -14,10 +14,23 @@ app.get('/aboutme' , (_,res)=>{
     res.sendFile(`${publicPath}/about.html`);
 
 });
+app.set('view engine','ejs');
+
+app.get('/profile',(_,res)=>{
+    const user={
+        username : 'Ayan Rafiqi',
+        email : 'ayanrafiqui@gmail.com',
+        city : 'Srinagar Kashmir'
+    }
+    res.render('profile',{user});
+
+});
 
 app.get('*' , (_,res)=>{
     res.sendFile(`${publicPath}/404.html`);
 });
 
-app.listen(7000);
+
+
+app.listen(2000);
 
