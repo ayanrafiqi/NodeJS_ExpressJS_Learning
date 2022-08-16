@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -22,7 +21,7 @@ app.get('/profile',(_,res)=>{
         username : 'Ayan Rafiqi',
         email : 'ayanrafiqui@gmail.com',
         city : 'Srinagar Kashmir',
-        skills: ['JAVA', 'C', 'JavaScript','REACTJS','NODEJS']
+        skills: ['Java', 'C', 'JavaScript','REACTJS','NODEJS']
     }
     res.render('profile',{user});
 
