@@ -1,16 +1,15 @@
-//connecting NODEJS to MongoDB and printing the collection record of db on Console.
 // const {MongoClient} = require('mongodb'} or
 const MongoClient = require("mongodb").MongoClient;
+// Connect using a MongoClient instance
 const url = "mongodb://localhost:27017";
 const database = "shops";
+// Connect using MongoClient
 const client = new MongoClient(url);
 
-async function getData() {
+async function dbConnection() {
   let result = await client.connect();
   let db = result.db(database);
-  let collection = db.collection("products");
-  let response = await collection.find().toArray();
-  console.log(response);
+  return db.collection("products");
 }
 
-getData();
+module.exports = dbConnection;
