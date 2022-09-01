@@ -29,7 +29,8 @@ app.put("/:name", async (req, resp) => {
 app.delete("/:id", async (req, resp) => {
   const data = await dbConnection();
   const result = await data.deleteOne({
-    _id: new mongoDB.ObjectId(req.params.id)});
+    _id: new mongoDB.ObjectId(req.params.id),
+  });
   resp.send(result);
 });
 
