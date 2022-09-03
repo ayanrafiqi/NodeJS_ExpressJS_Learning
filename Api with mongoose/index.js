@@ -1,5 +1,4 @@
 const express = require("express");
-const product = require("./product");
 require("./config");
 const Products = require("./product");
 const app = express();
